@@ -11,8 +11,7 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd
 ">
-    <context:component-scan base-package="cn.peppa.mapper" />
-    <context:component-scan base-package="cn.peppa.service" />
+    <context:component-scan base-package="cn.peppa.web" />
 
     <mvc:annotation-driven />
 
@@ -21,6 +20,6 @@
           p:prefix=".jsp"
     ></bean>
 
-    <mvc:resources mapping="/static/*" location="/static/"></mvc:resources>
+    <mvc:resources mapping="/static/**" location="/static/"></mvc:resources>
 
 </beans>

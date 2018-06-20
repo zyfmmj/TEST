@@ -25,24 +25,27 @@ body{ background:#0066A8 url(img/login_bg.jpg) no-repeat center 0px;}
 <body>
 <div class="tit"><img src="img/tit.png" alt="" /></div>
 <div class="login-wrap">
-  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td height="25" valign="bottom">用户名：</td>
-    </tr>
-    <tr>
-      <td><input type="text" class="login_input login_user" value="admin" /></td>
-    </tr>
-    <tr>
-      <td height="35" valign="bottom">密  码：</td>
-    </tr>
-    <tr>
-      <td><input type="password"  class="login_input login_password" value="12345678" /></td>
-    </tr>
-    <tr>
-      <td height="60" valign="bottom"><a href="开票界面.html" class="btn btn-block btn-login">登录</a></td>
-    </tr>
-   
-  </table>
+  <form action="/ecLMS/login" method="post">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="25" valign="bottom">用户名：</td>
+      </tr>
+      <tr>
+        <td><input type="text" class="login_input login_user" value="admin" name="userName" /></td>
+      </tr>
+      <tr>
+        <td height="35" valign="bottom">密  码：</td>
+      </tr>
+      <tr>
+        <td><input type="password"  class="login_input login_password" value="admin" name="userPassword" /></td>
+      </tr>
+      <tr>
+        <td height="60" valign="bottom">
+          <input type="submit" value="登陆" class="btn btn-login btn-block"/>
+        </td>
+      </tr>
+    </table>
+  </form>
 </div>
 <div class="copyright">建议使用IE8以上版本或谷歌浏览器</div>
 </body>

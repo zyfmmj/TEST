@@ -4,12 +4,14 @@
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1"
          metadata-complete="false">
-  
+
+  <!-- 导入applicationContext配置文件 -->
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:applicatonContext.xml</param-value>
+    <param-value>classpath:applicationContext.xml</param-value>
   </context-param>
-  
+
+  <!-- 自动监听并匹配所有链接 -->
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>

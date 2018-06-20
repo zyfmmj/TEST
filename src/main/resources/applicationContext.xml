@@ -15,7 +15,9 @@
         http://www.springframework.org/schema/aop/spring-aop.xsd
 ">
     <context:property-placeholder location="classpath:database.properties" />
-    <context:component-scan base-package="cn.peppa.web" />
+
+    <context:component-scan base-package="cn.peppa.mapper" />
+    <context:component-scan base-package="cn.peppa.service" />
 
     <bean class="org.apache.commons.dbcp2.BasicDataSource" id="dataSource"
           p:driverClassName="${mysql.driver}"
@@ -34,16 +36,16 @@
           p:basePackage="cn.peppa.mapper"
     ></bean>
 
-    <!-- 事务管理 -->
+     <!--事务管理-->
     <bean id="transactionManager"
           class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource" />
     </bean>
 
-    <!-- AOP 事务处理 开始 -->
+     <!--AOP 事务处理 开始-->
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>
-            <!-- 其他详细规则自行添加 -->
+             <!--其他详细规则自行添加-->
             <tx:method name="*" propagation="REQUIRED" rollback-for="Exception" />
         </tx:attributes>
     </tx:advice>
@@ -53,6 +55,6 @@
                       id="transService" />
         <aop:advisor pointcut-ref="transService" advice-ref="txAdvice" />
     </aop:config>
-    <!-- AOP 事务处理 结束 -->
+     <!--AOP 事务处理 结束-->
 
 </beans>
